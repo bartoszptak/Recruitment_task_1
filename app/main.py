@@ -17,6 +17,7 @@ def check():
 
 
         error = controller.check_data(data)
+        
         if error:
            report_template = render_template('reports.html', decision=error)
            return report_template 

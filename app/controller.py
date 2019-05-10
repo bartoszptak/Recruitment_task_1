@@ -25,4 +25,4 @@ class Controller:
         weather_reports = []
 
 
-        return 'No'
+        return 'Decision: No'
