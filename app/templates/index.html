@@ -1,0 +1,155 @@
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link id="bs-css" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <link id="bsdp-css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+    <link id="weather-css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css" rel="stylesheet">    
+  <title>
+    Id candidate graduated?
+  </title>
+  <style>
+        @keyframes spinner {
+        to {transform: rotate(360deg);}
+        }
+        
+        .spinner:before {
+        content: '';
+        box-sizing: border-box;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 30px;
+        height: 30px;
+        margin-top: -15px;
+        margin-left: -15px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        border-top-color: #07d;
+        animation: spinner .6s linear infinite;
+        }
+  </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+                    <div class="col col-lg-12 col-sm-12">
+                        <h1>Id candidate graduated?</h1>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label style="width: 100%;">gpa
+                                <input type="text" class="input-sm form-control" id="gpa" name="gpa" required>
+                            </label>
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label style="width: 100%;">maths_exam
+                                <input type="text" class="input-sm form-control" id="maths_exam" name="maths_exam" required>
+                            </label>
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label style="width: 100%;">physics_exam
+                                <input type="text" class="input-sm form-control" id="physics_exam" name="physics_exam" required>
+                            </label>
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label style="width: 100%;">cs_exam
+                                <input type="text" class="input-sm form-control" id="cs_exam" name="cs_exam" required>
+                            </label>
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label style="width: 100%;">art_exam
+                                <input type="text" class="input-sm form-control" id="art_exam" name="art_exam" required>
+                            </label>
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label style="width: 100%;">language_exam
+                                <input type="text" class="input-sm form-control" id="language_exam" name="language_exam" required>
+                            </label>
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label style="width: 100%;">essay_score
+                                <input type="text" class="input-sm form-control" id="essay_score" name="essay_score" required>
+                            </label>
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label style="width: 100%;">interview_score
+                                <input type="text" class="input-sm form-control" id="interview_score" name="interview_score" required>
+                            </label>
+                        </div> 
+                    </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <label style="width: 100%;">score
+                    <input type="text" class="input-sm form-control" id="score" name="score" required>
+                </label>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <button type="button" class="btn btn-primary" id="gtw">Check</button>
+            </div>        
+        </div>
+        <div class="row">
+                <div class="col-md-12">
+                    &nbsp;                    
+                </div>        
+        </div> 
+        <div class="row">
+                <div class="col-md-12" id="result">                    
+                </div>        
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+        
+            $('#gtw').click( function() 
+            {
+                var data ={};
+                data['gpa'] = $('#gpa').val();
+                data['maths_exam'] =  $('#maths_exam').val();
+                data['physics_exam'] =  $('#physics_exam').val();
+                data['cs_exam'] =  $('#cs_exam').val();
+                data['art_exam'] =  $('#art_exam').val();
+                data['language_exam'] =  $('#language_exam').val();
+                data['essay_score'] =  $('#essay_score').val();
+                data['interview_score'] =  $('#interview_score').val();
+                data['score'] =  $('#score').val();
+                
+                $('#result').empty();
+                $('#result').addClass('spinner');
+            
+                $.ajax({
+                    type : "POST",
+                    url : "{{ url_for('check') }}",
+                    data: JSON.stringify(data),
+                    contentType: 'application/json;charset=UTF-8',
+                    success: function(result) 
+                    {
+                        $('#result').removeClass('spinner');
+                        $('#result').html(result);
+                    }        
+                });                
+            }); 
+        });
+        
+    </script>
+</body>
+</html>
