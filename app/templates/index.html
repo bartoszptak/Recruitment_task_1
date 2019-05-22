@@ -39,68 +39,54 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <label style="width: 100%;">gpa
+                            <label style="width: 100%;">GPA
                                 <input type="text" class="input-sm form-control" id="gpa" name="gpa" required>
                             </label>
                         </div> 
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <label style="width: 100%;">maths_exam
+                            <label style="width: 100%;">Maths exam
                                 <input type="text" class="input-sm form-control" id="maths_exam" name="maths_exam" required>
                             </label>
                         </div> 
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <label style="width: 100%;">physics_exam
-                                <input type="text" class="input-sm form-control" id="physics_exam" name="physics_exam" required>
-                            </label>
-                        </div> 
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label style="width: 100%;">cs_exam
-                                <input type="text" class="input-sm form-control" id="cs_exam" name="cs_exam" required>
-                            </label>
-                        </div> 
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label style="width: 100%;">art_exam
+                            <label style="width: 100%;">Art exam
                                 <input type="text" class="input-sm form-control" id="art_exam" name="art_exam" required>
                             </label>
                         </div> 
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <label style="width: 100%;">language_exam
+                            <label style="width: 100%;">Language exam
                                 <input type="text" class="input-sm form-control" id="language_exam" name="language_exam" required>
                             </label>
                         </div> 
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <label style="width: 100%;">essay_score
+                            <label style="width: 100%;">Essay score
                                 <input type="text" class="input-sm form-control" id="essay_score" name="essay_score" required>
                             </label>
                         </div> 
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <label style="width: 100%;">interview_score
+                            <label style="width: 100%;">Interview score
                                 <input type="text" class="input-sm form-control" id="interview_score" name="interview_score" required>
                             </label>
                         </div> 
                     </div>
 
-        <div class="row">
-            <div class="col-md-6">
-                <label style="width: 100%;">score
-                    <input type="text" class="input-sm form-control" id="score" name="score" required>
-                </label>
-            </div> 
-        </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label style="width: 100%;">Score
+                                <input type="text" class="input-sm form-control" id="score" name="score" required>
+                            </label>
+                        </div> 
+                    </div>
         <div class="row">
             <div class="col-md-6">
                 <button type="button" class="btn btn-primary" id="gtw">Check</button>
@@ -125,10 +111,8 @@
                 var data ={};
                 data['gpa'] = $('#gpa').val();
                 data['maths_exam'] =  $('#maths_exam').val();
-                data['physics_exam'] =  $('#physics_exam').val();
-                data['cs_exam'] =  $('#cs_exam').val();
-                data['art_exam'] =  $('#art_exam').val();
                 data['language_exam'] =  $('#language_exam').val();
+                data['art_exam'] =  $('#art_exam').val();                
                 data['essay_score'] =  $('#essay_score').val();
                 data['interview_score'] =  $('#interview_score').val();
                 data['score'] =  $('#score').val();

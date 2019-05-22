@@ -2,4 +2,6 @@ flask
 flask-cors
 requests
 geopy
-
+sklearn
+pandas
+xgboost
