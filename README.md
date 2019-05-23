@@ -1,5 +1,5 @@
 # Recruitment task 1
-The recruitment task comes pearson.com: [instruction](https://github.com/bartoszptak/Recruitment_task_1/blob/master/Audition%20Task%20-%20DS%20%26%20MLE%20p.pdf).
+The recruitment task from pearson.com: [instruction](https://github.com/bartoszptak/Recruitment_task_1/blob/master/Audition%20Task%20-%20DS%20%26%20MLE%20p.pdf).
 
 ### Research, analysis and training
 - Jupyter-Notebook [(this)](https://github.com/bartoszptak/Recruitment_task_1/blob/master/Analyzing.ipynb)
